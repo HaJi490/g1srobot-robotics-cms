@@ -45,5 +45,21 @@ export default defineType ({
             type: 'array',
             of: [{type: 'block'}]
         },
+        {
+            name: 'mainImage',
+            title: '대표 이미지',
+            type: 'image',
+            options: {hotspot: true}
+        },
+        {
+            name: 'startDate',
+            title: '시작일',
+            type: 'date'
+        },
+        {
+            name: 'endDate',
+            title: '종료일',
+            type: 'date'
+        },
     ]
 })
