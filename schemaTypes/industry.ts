@@ -23,5 +23,11 @@ export default defineType ({
             title: '아이콘',
             type: 'image',
         }),
+        defineField ({
+            name: 'iconName',
+            title: '아이콘 이름',
+            type: 'string',
+            description: 'Lucide 아이콘 이름을 입력하세요 (예: Car, Cpu, Ship)',
+        }),
     ]
 })

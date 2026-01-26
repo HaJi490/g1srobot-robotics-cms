@@ -45,7 +45,12 @@ export default defineType ({
                 to: [{type: 'industry'}] 
             }]
         }),
-
+        defineField({
+            name: 'mainImage',
+            title: '대표 이미지',
+            type: 'image',
+            options: {hotspot: true}
+        }),
         defineField ({
             name: 'images',
             title: '제품 이미지',
