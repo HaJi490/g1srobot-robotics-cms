@@ -74,7 +74,7 @@ export default defineType ({
 
         defineField ({
             name: 'publishedAt',
-            title: '게시일',
+            title: '출시일',
             type: 'datetime',
         }),
     ],
