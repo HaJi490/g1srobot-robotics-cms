@@ -1,5 +1,5 @@
 import { defineType, defineField } from "sanity";
-import { topFields, bottomFields } from "./commonFields";
+import { topFields, bottomFields } from "../objects/commonFields";
 
 export default defineType ({
     name: 'robot',
