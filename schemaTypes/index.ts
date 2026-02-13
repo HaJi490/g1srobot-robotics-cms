@@ -11,6 +11,7 @@ import companyConfig from './singletons/companyConfig'
 import client from './documents/client'
 
 import { contactItem } from './objects/contactItem'
+import { locationInfo } from './objects/locationInfo'
 
 
 // FIXME 삭제
@@ -34,6 +35,7 @@ export const schemaTypes = [
     homeConfig,
     companyConfig,
     client,
-
-    contactItem
+    // 타입 사용시 필요
+    contactItem,
+    locationInfo
 ]

@@ -1,6 +1,7 @@
 // 사이트 전역 설정
 import { defineType, defineField } from "sanity";
 import { contactItem } from "../objects/contactItem";
+import { locationInfo } from "../objects/locationInfo";
 
 export default defineType ({
     name: 'siteSettings',
@@ -29,7 +30,7 @@ export default defineType ({
             fields: [
                 { name: 'phone', title: '대표 전화', type: 'contactItem' },
                 { name: 'email', title: '대표 이메일', type: 'contactItem' },
-                { name: 'address', title: '본사 주소', type: 'contactItem' },
+                { name: 'address', title: '회사 주소 및 지도 설정', type: 'locationInfo' },
             ]
         }),
         defineField ({
