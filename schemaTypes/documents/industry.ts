@@ -7,7 +7,12 @@ export default defineType ({
     fields: [
         defineField ({
             name: 'name',
-            title: '산업명',
+            title: '산업명(국문)',
+            type: 'string'
+        }),
+        defineField ({
+            name: 'nameEn',
+            title: '산업명(영문)',
             type: 'string'
         }),
 

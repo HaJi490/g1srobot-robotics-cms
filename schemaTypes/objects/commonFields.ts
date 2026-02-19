@@ -3,9 +3,15 @@ import { defineField } from "sanity";
 export const topFields =  [
     defineField({
         name: 'name',
-        title: '제품명',
+        title: '제품명(국문)',
         type: 'string',
         validation: Rule => Rule.required(),
+    }),
+    defineField({
+        name: 'nameEn',
+        title: '제품명(영문)',
+        type: 'string',
+        //validation: Rule => Rule.required(),
     }),
 
     defineField({
