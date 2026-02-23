@@ -2,7 +2,7 @@ import { defineType, defineField } from "sanity";
 
 export default defineType ({
     name: 'useCase',
-    title: 'Use Case',
+    title: '적용 사례',
     type: 'document',
     fields: [
         {
@@ -22,12 +22,12 @@ export default defineType ({
             type: 'text'
         },
         {
-            name: 'products',
-            title: '관련 제품',
+            name: 'systems',
+            title: '관련 시스템',
             type: 'array',
             of: [{ 
                 type: 'reference',
-                to:[{type: 'product'}]
+                to:[{type: 'system'}]
             }]
         },
         {
