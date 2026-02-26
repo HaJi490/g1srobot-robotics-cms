@@ -11,7 +11,7 @@ export default defineType ({
             name: 'components',
             title: '사용 부품',
             type: 'array',
-            of: [{type: 'reference', to: [{type: 'productComponent'}] }]
+            of: [{type: 'reference', to: [{type: 'component'}] }]
         }),
         ...bottomFields
     ]

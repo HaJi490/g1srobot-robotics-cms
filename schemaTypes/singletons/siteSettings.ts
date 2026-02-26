@@ -1,7 +1,5 @@
 // 사이트 전역 설정
 import { defineType, defineField } from "sanity";
-import { contactItem } from "../objects/contactItem";
-import { locationInfo } from "../objects/locationInfo";
 
 export default defineType ({
     name: 'siteSettings',
