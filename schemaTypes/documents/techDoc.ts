@@ -23,7 +23,8 @@ export default defineType ({
                     {title: '기타', value: 'etc'},
                 ],
                 layout: 'radio'
-            }
+            },
+            validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: 'file',
