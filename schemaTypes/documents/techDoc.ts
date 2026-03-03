@@ -1,6 +1,7 @@
 import { defineType, defineField } from "sanity";
+import { AssetTitleInput } from "../../components/AssetTitleInput";
 
-export default defineType ({
+export default defineType({
     name: 'techDoc',
     title: '자료실',
     type: 'document',
@@ -17,10 +18,10 @@ export default defineType ({
             type: 'string',
             options: {
                 list: [
-                    {title: '기술자료', value: 'technical-data'},
-                    {title: '카탈로그', value: 'catalog'},
-                    {title: '사용설명서', value: 'manual'},
-                    {title: '기타', value: 'etc'},
+                    { title: '기술자료', value: 'technical-data' },
+                    { title: '카탈로그', value: 'catalog' },
+                    { title: '사용설명서', value: 'manual' },
+                    { title: '기타', value: 'etc' },
                 ],
                 layout: 'radio'
             },
@@ -30,17 +31,29 @@ export default defineType ({
             name: 'file',
             title: '파일',
             type: 'array',
-            of: [{type: 'file'}],
+            of: [{
+                type: 'file',
+                fields: [
+                    {
+                        name: 'title',
+                        title: '파일 제목',
+                        type: 'string',
+                        components: {
+                            input: AssetTitleInput
+                        }
+                    }
+                ]
+            }],
             validation: (Rule) => Rule.required(),
         }),
         defineField({
-            name:'language',
+            name: 'language',
             title: '언어',
             type: 'string',
             options: {
                 list: [
-                    {title: '한국어(KO)', value: 'ko'},
-                    {title: '영어(EN)', value: 'en'},
+                    { title: '한국어(KO)', value: 'ko' },
+                    { title: '영어(EN)', value: 'en' },
                 ]
             },
             initialValue: 'ko', // 기본값 설정
@@ -64,9 +77,9 @@ export default defineType ({
             of: [{
                 type: 'reference',
                 to: [
-                    {type: 'system'},
-                    {type: 'robot'},
-                    {type: 'component'},
+                    { type: 'system' },
+                    { type: 'robot' },
+                    { type: 'component' },
                 ],
             }],
         }),

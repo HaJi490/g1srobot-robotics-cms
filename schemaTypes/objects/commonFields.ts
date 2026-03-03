@@ -1,4 +1,5 @@
 import { defineField } from "sanity";
+import { AssetTitleInput } from "../../components/AssetTitleInput";
 
 export const topFields = [
     defineField({
@@ -85,13 +86,15 @@ export const bottomFields = [
                     name: 'title',
                     title: '이미지 제목',
                     type: 'string',
-                    description: '관리용 이미지 이름 (선택)'
+                    components: {
+                        input: AssetTitleInput
+                    }
                 },
                 {
                     name: 'alt',
-                    title: '대체 텍스트 (alt)',
+                    title: '이미지 설명(alt)',
                     type: 'string',
-                    description: 'SEO 및 접근성을 위한 설명',
+                    description: 'SEO 및 접근성을 위한 요약 설명',
                     validation: Rule => Rule.required().warning('SEO를 위해 alt를 입력해주세요')
                 }
             ]
@@ -105,7 +108,24 @@ export const bottomFields = [
             type: 'file',
             name: 'videoFile',
             title: '영상 파일',
-            options: { accept: 'video/*' }
+            options: { accept: 'video/*' },  // 영상 파일만 선택 가능
+            fields: [
+                {
+                    name: 'title',
+                    title: '영상 제목',
+                    type: 'string',
+                    components: {
+                        input: AssetTitleInput
+                    }
+                },
+                {
+                    name: 'alt',
+                    title: '영상 설명 (alt)',
+                    type: 'string',
+                    description: 'SEO 및 접근성을 위한 요약 설명',
+                    validation: Rule => Rule.required().warning('SEO를 위해 alt를 입력해주세요')
+                }
+            ]
         }]
     }),
 
