@@ -1,4 +1,5 @@
 import { defineField } from "sanity";
+import { SpecTableInput } from "../../components/SpecTableInput"
 import { AssetTitleInput } from "../../components/AssetTitleInput";
 
 export const topFields = [
@@ -37,7 +38,10 @@ export const topFields = [
                 { name: 'value', title: '값', type: 'string' },
                 { name: 'unit', title: '단위', type: 'string' },
             ],
-        },],
+        }],
+        components: {
+            input: SpecTableInput
+        }
     }),
 
     defineField({
