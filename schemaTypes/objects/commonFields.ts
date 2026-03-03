@@ -1,6 +1,6 @@
 import { defineField } from "sanity";
 
-export const topFields =  [
+export const topFields = [
     defineField({
         name: 'name',
         title: '제품명(국문)',
@@ -25,40 +25,40 @@ export const topFields =  [
         validation: Rule => Rule.required(),
     }),
 
-    defineField ({
+    defineField({
         name: 'specs',
         title: '제품 사양',
         type: 'array',
         of: [{
-                type: 'object',
-                fields: [
-                    {name: 'label', title: '항목명', type: 'string'},
-                    {name: 'value', title: '값', type: 'string'},
-                    {name: 'unit', title: '단위', type: 'string'},
-                ],
-            },],
+            type: 'object',
+            fields: [
+                { name: 'label', title: '항목명', type: 'string' },
+                { name: 'value', title: '값', type: 'string' },
+                { name: 'unit', title: '단위', type: 'string' },
+            ],
+        },],
     }),
 
     defineField({
         name: 'productLine',
         title: '제품군',
         type: 'reference',
-        to: [{type: 'productLine'}],
+        to: [{ type: 'productLine' }],
     }),
 
-    defineField ({
+    defineField({
         name: 'industries',
         title: '적용 산업',
         type: 'array',
         of: [{
-            type: 'reference', 
-            to: [{type: 'industry'}] 
+            type: 'reference',
+            to: [{ type: 'industry' }]
         }]
     }),
 ]
 
-export const bottomFields =[
-    defineField ({
+export const bottomFields = [
+    defineField({
         name: 'publishedAt',
         title: '출시일',
         type: 'datetime',
@@ -72,23 +72,40 @@ export const bottomFields =[
         name: 'mainImage',
         title: '대표 이미지',
         type: 'image',
-        options: {hotspot: true}
+        options: { hotspot: true }
     }),
-    defineField ({
+    defineField({
         name: 'images',
         title: '제품 이미지',
         type: 'array',
-        of: [{ type: 'image'}]
+        of: [{
+            type: 'image',
+            fields: [
+                {
+                    name: 'title',
+                    title: '이미지 제목',
+                    type: 'string',
+                    description: '관리용 이미지 이름 (선택)'
+                },
+                {
+                    name: 'alt',
+                    title: '대체 텍스트 (alt)',
+                    type: 'string',
+                    description: 'SEO 및 접근성을 위한 설명',
+                    validation: Rule => Rule.required().warning('SEO를 위해 alt를 입력해주세요')
+                }
+            ]
+        }]
     }),
-    defineField ({
+    defineField({
         name: 'videos',
         title: '제품 작동영상',
         type: 'array',
-        of:[{
+        of: [{
             type: 'file',
             name: 'videoFile',
             title: '영상 파일',
-            options: {accept: 'video/*'}
+            options: { accept: 'video/*' }
         }]
     }),
 
