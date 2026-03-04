@@ -31,19 +31,6 @@ export default defineType ({
             title: '비전 문구',
             type: 'text'
         }),
-        // defineField({
-        //     name: 'clients',
-        //     title: '고객사',
-        //     description: '로고(화이트)가 있는 고객사',
-        //     type: 'array',
-        //     of: [{type: 'reference', to:[{type: 'client'}]
-        //         // type: 'object',
-        //         // fields: [
-        //         //     {name: 'name', title: '회사명', type: 'string'},
-        //         //     {name: 'logo', title: '로고(흰색)', type: 'image', options: { hotspot: true } }
-        //         // ]
-        //     }]
-        // }),
         defineField({
             name: 'timeline',
             title: '성장 연혁',

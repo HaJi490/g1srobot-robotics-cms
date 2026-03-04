@@ -1,5 +1,6 @@
 import { defineType, defineField } from "sanity";
 import { AssetTitleInput } from "../../components/AssetTitleInput";
+import { AssetRenameInput } from "../../components/AssetRenameInput";
 
 export default defineType({
     name: 'techDoc',
@@ -35,13 +36,13 @@ export default defineType({
                 type: 'file',
                 fields: [
                     {
-                        name: 'title',
-                        title: '파일 제목',
+                        name: 'assetNameEditor',
+                        title: '파일명 수정 (전역 반영)',
                         type: 'string',
                         components: {
-                            input: AssetTitleInput
+                            input: AssetRenameInput
                         }
-                    }
+                    },
                 ]
             }],
             validation: (Rule) => Rule.required(),

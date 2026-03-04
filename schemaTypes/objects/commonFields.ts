@@ -1,6 +1,7 @@
 import { defineField } from "sanity";
 import { SpecTableInput } from "../../components/SpecTableInput"
 import { AssetTitleInput } from "../../components/AssetTitleInput";
+import { AssetRenameInput } from "../../components/AssetRenameInput";
 
 export const topFields = [
     defineField({
@@ -87,11 +88,11 @@ export const bottomFields = [
             type: 'image',
             fields: [
                 {
-                    name: 'title',
-                    title: '이미지 제목',
+                    name: 'assetNameEditor',
+                    title: '파일명 수정 (전역 반영)',
                     type: 'string',
                     components: {
-                        input: AssetTitleInput
+                        input: AssetRenameInput
                     }
                 },
                 {
@@ -115,11 +116,11 @@ export const bottomFields = [
             options: { accept: 'video/*' },  // 영상 파일만 선택 가능
             fields: [
                 {
-                    name: 'title',
-                    title: '영상 제목',
+                    name: 'assetNameEditor',
+                    title: '파일명 수정 (전역 반영)',
                     type: 'string',
                     components: {
-                        input: AssetTitleInput
+                        input: AssetRenameInput
                     }
                 },
                 {
@@ -132,6 +133,6 @@ export const bottomFields = [
             ]
         }]
     }),
-
+    
 
 ]
