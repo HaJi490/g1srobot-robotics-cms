@@ -32,6 +32,14 @@ export const topFields = [
         title: '제품 사양',
         type: 'array',
         description: '핵심 사양 3개를 우선 입력해주세요. 3개 초과 입력 시 하단 표 영역에 텍스트로 출력됩니다.',
+        validation: (Rule) => 
+        Rule.custom((value) => {
+            // ✨ value가 없거나(0개) 3개 미만이면 경고 메시지 반환
+            if (!value || value.length < 3) {
+                return '최소 3개의 사양을 입력하는 것을 권장합니다.';
+            }
+            return true; // 조건 충족 시 통과
+        }).warning(), 
         of: [{
             type: 'object',
             fields: [
