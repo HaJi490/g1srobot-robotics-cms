@@ -1,6 +1,5 @@
 import { defineField } from "sanity";
 import { SpecTableInput } from "../../components/SpecTableInput"
-import { AssetTitleInput } from "../../components/AssetTitleInput";
 import { AssetRenameInput } from "../../components/AssetRenameInput";
 
 export const topFields = [
@@ -32,6 +31,7 @@ export const topFields = [
         name: 'specs',
         title: '제품 사양',
         type: 'array',
+        description: '핵심 사양 3개를 우선 입력해주세요. 3개 초과 입력 시 하단 표 영역에 텍스트로 출력됩니다.',
         of: [{
             type: 'object',
             fields: [
@@ -43,6 +43,13 @@ export const topFields = [
         components: {
             input: SpecTableInput
         }
+    }),
+    defineField({
+        name: 'specsImg',
+        title: '제품 사양 표 (이미지)',
+        type: 'image',
+        description: '입력된 텍스트 사양이 3개 이하일 때, 상세페이지 하단에 표를 대신해 출력됩니다.',
+        options: { hotspot: true }
     }),
 
     defineField({

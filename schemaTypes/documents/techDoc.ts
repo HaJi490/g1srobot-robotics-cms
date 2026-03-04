@@ -1,5 +1,4 @@
 import { defineType, defineField } from "sanity";
-import { AssetTitleInput } from "../../components/AssetTitleInput";
 import { AssetRenameInput } from "../../components/AssetRenameInput";
 
 export default defineType({
