@@ -16,12 +16,10 @@ import { locationInfo } from './objects/locationInfo'
 
 // FIXME 삭제
 import page from './page'
-import product from './product' 
 import faq from './faq'
 
 
 export const schemaTypes = [
-    product,
     component,
     robot,
     system,
@@ -29,12 +27,12 @@ export const schemaTypes = [
     productLine,
     useCase,
     techDoc,
-    page,
+    client,
     faq,
+    page,
     siteSettings,
     homeConfig,
     companyConfig,
-    client,
     // 타입 사용시 필요
     contactItem,
     locationInfo
