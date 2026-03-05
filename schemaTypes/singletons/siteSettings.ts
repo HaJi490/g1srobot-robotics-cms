@@ -35,6 +35,7 @@ export default defineType ({
             name: 'clients',
             title: '고객사',
             type: 'array',
+            description: `'웹사이트에 보여줄 고객사를 선택합니다. (※ 배경 없는 투명 SVG + 화이트 로고 색상 로고만 정상적으로 표시됩니다.)`,
             of: [{type: 'reference', to:[{type: 'client'}]}]
         }),
         defineField ({
