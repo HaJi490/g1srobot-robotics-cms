@@ -27,11 +27,6 @@ export default defineType({
             title: '종료일',
             type: 'date'
         }),
-        defineField({ // 삭제
-            name: 'summary',
-            title: '요약',
-            type: 'text'
-        }),
         defineField({
             name: 'description',
             title: '사례 설명',
