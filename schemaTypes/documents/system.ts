@@ -1,5 +1,5 @@
 import { defineType, defineField } from "sanity";
-import { topFields, bottomFields } from "../objects/commonFields";
+import { topFields, categoryFields, bottomFields } from "../objects/commonFields";
 
 export default defineType ({
     name: 'system',
@@ -7,6 +7,7 @@ export default defineType ({
     type: 'document',
     fields: [
         ...topFields,
+        ...categoryFields,
         defineField({
             name: 'robots',
             title: '사용 로봇',

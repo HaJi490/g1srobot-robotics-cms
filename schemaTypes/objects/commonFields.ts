@@ -34,7 +34,7 @@ export const topFields = [
         description: '핵심 사양 3개를 우선 입력해주세요. 3개 초과 입력 시 하단 표 영역에 텍스트로 출력됩니다.',
         validation: (Rule) => 
         Rule.custom((value) => {
-            // ✨ value가 없거나(0개) 3개 미만이면 경고 메시지 반환
+            // value가 없거나(0개) 3개 미만이면 경고 메시지 반환
             if (!value || value.length < 3) {
                 return '최소 3개의 사양을 입력하는 것을 권장합니다.';
             }
@@ -59,7 +59,9 @@ export const topFields = [
         description: '입력된 텍스트 사양이 3개 이하일 때, 상세페이지 하단에 표를 대신해 출력됩니다.',
         options: { hotspot: true }
     }),
+]
 
+export const categoryFields = [
     defineField({
         name: 'productLine',
         title: '제품군',
