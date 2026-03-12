@@ -9,6 +9,7 @@ import siteSettings from './singletons/siteSettings'
 import homeConfig from './singletons/homeConfig'
 import companyConfig from './singletons/companyConfig'
 import client from './documents/client'
+import policy from './singletons/policy'
 
 import { contactItem } from './objects/contactItem'
 import { locationInfo } from './objects/locationInfo'
@@ -33,6 +34,7 @@ export const schemaTypes = [
     siteSettings,
     homeConfig,
     companyConfig,
+    policy,
     // 타입 사용시 필요
     contactItem,
     locationInfo
