@@ -60,8 +60,8 @@ export default defineType({
                     name: 'metadata',
                     title: '이미지 상세 설정 (파일명/Alt)',
                     options: {
-                        collapsible: true, // ✨ 접기/펼치기 가능하게 설정
-                        collapsed: true    // ✨ 기본 상태를 '접힘'으로 설정
+                        collapsible: true, 
+                        collapsed: true 
                     }
                 }
             ],

@@ -15,6 +15,10 @@ export default defineType ({
             name: 'logos',
             title: '회사 로고',
             type: 'object',
+            options: {
+                collapsible: true, // 접기 활성화
+                collapsed: true    // 접힌 상태 기본
+            },
             fields: [
                 {name: 'main', title: '메인 색상', type: 'image' },
                 {name: 'light', title: '밝은 배경용 (블랙)', type: 'image' },
