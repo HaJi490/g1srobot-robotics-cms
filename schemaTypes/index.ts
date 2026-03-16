@@ -14,12 +14,6 @@ import policy from './documents/policy'
 import { contactItem } from './objects/contactItem'
 import { locationInfo } from './objects/locationInfo'
 
-
-// FIXME 삭제
-import page from './page'
-import faq from './faq'
-
-
 export const schemaTypes = [
     component,
     robot,
@@ -29,8 +23,6 @@ export const schemaTypes = [
     useCase,
     techDoc,
     client,
-    faq,
-    page,
     siteSettings,
     homeConfig,
     companyConfig,
