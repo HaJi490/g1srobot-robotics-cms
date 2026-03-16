@@ -2,6 +2,7 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
+import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list'
 
 export default defineConfig({
   name: 'default',
@@ -11,7 +12,7 @@ export default defineConfig({
 
   plugins: [
     structureTool({
-      structure: (S) =>
+      structure: (S, context) =>
         S.list()
           .title('Content')
           .items([
@@ -43,9 +44,22 @@ export default defineConfig({
 
             S.divider(), //구분선
 
+            orderableDocumentListDeskItem({
+              type: 'productLine',
+              title: '제품군(순서 정렬)',
+              S,
+              context
+            }),
+            orderableDocumentListDeskItem({
+              type: 'industry',
+              title: '산업군(순서 정렬)',
+              S,
+              context
+            }),
+
             // 나머지는 기존처럼 일반 리스트로 보여줌 (Product, Robot 등)
             ...S.documentTypeListItems().filter(
-              (listItem) => !['companyConfig','siteSettings', 'homeConfig'].includes(listItem.getId() as string)
+              (listItem) => !['companyConfig','siteSettings', 'homeConfig', 'productLine', 'industry'].includes(listItem.getId() as string)
           ),
           ]),
     }), 

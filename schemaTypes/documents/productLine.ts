@@ -1,10 +1,13 @@
 import { defineType, defineField } from "sanity";
+import { orderRankField, orderRankOrdering } from "@sanity/orderable-document-list";
 
 export default defineType ({
     name: 'productLine',
     title: '제품군',
     type: 'document',
+    orderings: [orderRankOrdering],
     fields: [
+        orderRankField({ type: 'productLine' }),
         defineField({
             name: 'name',
             title: '제품군명(국문)',
