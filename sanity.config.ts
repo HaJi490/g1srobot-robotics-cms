@@ -22,9 +22,11 @@ export default defineConfig({
               .id('siteSettings')
               .child(
                 S.document()
-                  .schemaType('siteSettings') // 스키마 name과 일치해야함
-                  .documentId('siteSettings') // ID를 고정해서 하나만 존재(DB에 저장될 ID)
+                  .schemaType('siteSettings')
+                  .documentId('siteSettings')
               ),
+            S.documentTypeListItem('policy')
+              .title('약관 및 정책 관리'),
             S.listItem()
               .title('회사소개 관리')
               .id('companyConfig')
@@ -42,24 +44,31 @@ export default defineConfig({
                   .documentId('homeConfig')
               ),
 
-            S.divider(), //구분선
+            S.divider(),
 
             orderableDocumentListDeskItem({
               type: 'productLine',
-              title: '제품군(순서 정렬)',
+              title: '제품군',
               S,
               context
             }),
             orderableDocumentListDeskItem({
               type: 'industry',
-              title: '산업군(순서 정렬)',
+              title: '산업군',
               S,
               context
             }),
 
             // 나머지는 기존처럼 일반 리스트로 보여줌 (Product, Robot 등)
             ...S.documentTypeListItems().filter(
-              (listItem) => !['companyConfig','siteSettings', 'homeConfig', 'productLine', 'industry'].includes(listItem.getId() as string)
+              (listItem) => ![
+                'siteSettings', 
+                'policy', 
+                'companyConfig',
+                'homeConfig',
+                'productLine', 
+                'industry'
+              ].includes(listItem.getId() as string)
           ),
           ]),
     }), 
