@@ -85,6 +85,7 @@ export const bottomFields = [
         name: 'publishedAt',
         title: '출시일',
         type: 'datetime',
+        description: '출시일 기준 최신순으로 정렬됩니다.'
     }),
     defineField({
         name: 'description',
@@ -96,7 +97,35 @@ export const bottomFields = [
         title: '대표 이미지',
         type: 'image',
         description: '제품 목록에서 보여줄 이미지입니다.',
-        options: { hotspot: true }
+        options: { hotspot: true },
+        fieldsets: [
+            {
+                name: 'metadata',
+                title: '이미지 상세 설정 (파일명/Alt)',
+                options: {
+                    collapsible: true, 
+                    collapsed: true 
+                }
+            }
+        ],
+        fields: [
+            {
+                name: 'assetNameEditor',
+                title: '파일명 수정 (전역 반영)',
+                type: 'string',
+                fieldset: 'metadata',
+                components: {
+                    input: AssetRenameInput 
+                }
+            },
+            {
+                name: 'alt',
+                title: '이미지 설명',
+                type: 'string',
+                fieldset: 'metadata', 
+                validation: Rule => Rule.required().warning('SEO를 위해 alt를 입력해주세요'),
+            }
+        ]
     }),
     defineField({
         name: 'images',

@@ -25,7 +25,8 @@ export default defineType({
         defineField({
             name: 'endDate',
             title: '종료일',
-            type: 'date'
+            type: 'date',
+            description: '종료일 기준 최신순으로 정렬됩니다.'
         }),
         defineField({
             name: 'description',
@@ -54,6 +55,7 @@ export default defineType({
             name: 'mainImage',
             title: '대표 이미지',
             type: 'image',
+            description: '적용사례 목록에서 보여줄 이미지입니다.',
             options: { hotspot: true },
             fieldsets: [
                 {
@@ -88,6 +90,7 @@ export default defineType({
             name: 'images',
             title: '사례 이미지',
             type: 'array',
+            description: '적용사례 상세페이지에서 보여줄 이미지입니다.',
             of: [{
                 type: 'image',
                 fields: [
