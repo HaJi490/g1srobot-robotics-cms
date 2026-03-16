@@ -95,11 +95,13 @@ export const bottomFields = [
         name: 'mainImage',
         title: '대표 이미지',
         type: 'image',
+        description: '제품 목록에서 보여줄 이미지입니다.',
         options: { hotspot: true }
     }),
     defineField({
         name: 'images',
         title: '제품 이미지',
+        description: '제품 상세페이지에서 보여줄 이미지입니다.',
         type: 'array',
         of: [{
             type: 'image',
