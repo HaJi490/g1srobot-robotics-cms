@@ -26,6 +26,13 @@ export const topFields = [
         },
         validation: Rule => Rule.required(),
     }),
+    defineField({
+        name: 'showProduct',
+        title: '제품 정보 노출',
+        type: 'boolean',
+        initialValue: true,
+        description: '비활성화 시 사용자에게 제품 사양, 이미지가 노출되지 않습니다.'
+    }),
 
     defineField({
         name: 'specs',
