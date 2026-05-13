@@ -31,7 +31,7 @@ export const topFields = [
         title: '제품 정보 노출',
         type: 'boolean',
         initialValue: true,
-        description: '비활성화 시 사용자에게 제품 사양, 이미지가 노출되지 않습니다.'
+        description: '1. 비활성화 시 사용자에게 제품 사양, 이미지가 노출되지 않습니다. 2. 비활성화 시 상세페이지가 생성되지 않습니다.'
     }),
 
     defineField({
@@ -58,6 +58,19 @@ export const topFields = [
         components: {
             input: SpecTableInput
         }
+    }),
+    defineField({
+        name: 'specs_before',
+        title: '제품 사양',
+        type: 'array',
+        of: [{
+            type: 'object',
+            fields: [
+                { name: 'label', title: '항목명', type: 'string' },
+                { name: 'value', title: '값', type: 'string' },
+                { name: 'unit', title: '단위', type: 'string' },
+            ],
+        },],
     }),
     defineField({
         name: 'specsImg',
