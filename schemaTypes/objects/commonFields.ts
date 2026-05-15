@@ -60,19 +60,6 @@ export const topFields = [
         }
     }),
     defineField({
-        name: 'specs_before',
-        title: '제품 사양',
-        type: 'array',
-        of: [{
-            type: 'object',
-            fields: [
-                { name: 'label', title: '항목명', type: 'string' },
-                { name: 'value', title: '값', type: 'string' },
-                { name: 'unit', title: '단위', type: 'string' },
-            ],
-        },],
-    }),
-    defineField({
         name: 'specsImg',
         title: '제품 사양 표 (이미지)',
         type: 'image',
